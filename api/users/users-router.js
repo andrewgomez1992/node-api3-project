@@ -1,9 +1,6 @@
 const express = require('express');
 const { validateUserId, validateUser, validatePost } = require('../middleware/middleware')
 
-// You will need `users-model.js` and `posts-model.js` both
-// The middleware functions also need to be required
-
 const User = require('./users-model')
 const Post = require('../posts/posts-model')
 
@@ -74,7 +71,5 @@ router.use((err, req, res, next) => { // eslint-disable-line
     stack: err.stack,
   })
 })
-
-// do not forget to export the router
 
 module.exports = router;
